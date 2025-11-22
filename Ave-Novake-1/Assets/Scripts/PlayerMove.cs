@@ -5,22 +5,28 @@ using UnityEngine;
 public class NewBehaviourScript : MonoBehaviour
 {
     public float player_speed;
+    public float player_jump_speed;
+    public bool player_two_feet_on_the_ground;
+    public Transform player_feet;
+    public LayerMask ground;
     public Rigidbody2D player_rb;
     public Collider2D player_coll;
-    public Animator Player_anim;
+    public Animator player_anim;
 
     // Start is called before the first frame update
     void Start()
     {
         player_rb = GetComponent<Rigidbody2D>();
         player_coll = GetComponent<Collider2D>();
-        Player_anim = GetComponent<Animator>();
+        player_anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
         PlayerMove();
+        PlayerJump();
+        player_two_feet_on_the_ground = Physics2D.OverlapCircle(player_feet.position,0.1f,ground);
     }
     void PlayerMove()
     {
@@ -31,6 +37,21 @@ public class NewBehaviourScript : MonoBehaviour
             transform.localScale = new Vector3(-face, transform.localScale.y, transform.localScale.z);
         }
         player_rb.velocity = new Vector2(player_speed * horizontal_num, player_rb.velocity.y);
-        Player_anim.SetFloat("run",Mathf.Abs(player_speed * horizontal_num));
+        player_anim.SetFloat("run",Mathf.Abs(player_speed * horizontal_num));
+    }
+    void PlayerJump()
+    {
+        if (Input.GetButton("Jump") && player_two_feet_on_the_ground)
+        {
+            player_rb.velocity = new Vector2(player_rb.velocity.x,player_jump_speed);
+        }
+        if (player_two_feet_on_the_ground)
+        {
+            player_anim.SetBool("jump",false);
+        }
+        else
+        {
+            player_anim.SetBool("jump",true);
+        }
     }
 }
