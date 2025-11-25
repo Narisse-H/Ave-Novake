@@ -25,7 +25,6 @@ public class NewBehaviourScript : MonoBehaviour
     void Update()
     {
         PlayerMove();
-        PlayerJump();
         player_two_feet_on_the_ground = Physics2D.OverlapCircle(player_feet.position,0.1f,ground);
     }
     void PlayerMove()
@@ -37,20 +36,18 @@ public class NewBehaviourScript : MonoBehaviour
             transform.localScale = new Vector3(-face, transform.localScale.y, transform.localScale.z);
         }
         player_rb.velocity = new Vector2(player_speed * horizontal_num, player_rb.velocity.y);
-        player_anim.SetFloat("run",Mathf.Abs(player_speed * horizontal_num));
-    }
-    void PlayerJump()
-    {
         if (Input.GetButton("Jump") && player_two_feet_on_the_ground)
         {
             player_rb.velocity = new Vector2(player_rb.velocity.x,player_jump_speed);
         }
         if (player_two_feet_on_the_ground)
         {
+            player_anim.SetFloat("run",Mathf.Abs(player_speed * horizontal_num));
             player_anim.SetBool("jump",false);
         }
         else
         {
+            player_anim.SetFloat("run",0.0f);
             player_anim.SetBool("jump",true);
         }
     }
