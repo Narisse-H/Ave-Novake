@@ -24,9 +24,11 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PlayerMove();
         player_two_feet_on_the_ground = Physics2D.OverlapCircle(player_feet.position,0.1f,ground);
+        PlayerAttack();
+        PlayerMove();
     }
+
     void PlayerMove()
     {
         float horizontal_num = Input.GetAxis("Horizontal");
@@ -51,4 +53,13 @@ public class NewBehaviourScript : MonoBehaviour
             player_anim.SetBool("jump",true);
         }
     }
+    
+    void PlayerAttack()
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            player_anim.SetTrigger("attack");
+        }
+    }
+    
 }
