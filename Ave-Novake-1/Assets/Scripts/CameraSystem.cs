@@ -21,12 +21,10 @@ public class CameraSystem : MonoBehaviour
         }
     }
     */
-    /*
     void Start()
     {
-        
+        player_target = GameObject.FindGameObjectWithTag("Player").transform;
     }
-    */
     void Update()
     {
         if (player_target != null && player_target.position != transform.position)
