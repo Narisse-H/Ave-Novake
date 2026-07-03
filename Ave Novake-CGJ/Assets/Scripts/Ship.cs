@@ -11,7 +11,7 @@ public class Ship : MonoBehaviour
     public GameObject pre_anchor;
     public List<GameObject> anchors;
     public int max_deployed_anchors;
-    private int deployed_anchors;
+    public int deployed_anchors;
 
     //Functions
     void Set_anchor()//When key "F" is pressed
