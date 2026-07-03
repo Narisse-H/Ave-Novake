@@ -7,6 +7,8 @@ public class CameraController : MonoBehaviour
 {
     public GameObject character;
     public Vector2 ship_pos;
+    public float thresholdX = 7.0f;
+    public float thresholdY = 5.0f;
     private float pos_x;
     private float pos_y;
 
@@ -15,11 +17,20 @@ public class CameraController : MonoBehaviour
         ship_pos = character.transform.position;
         pos_x = (ship_pos.x - transform.position.x);
         pos_y = (ship_pos.y - transform.position.y);
-        if (pos_x >= 7 || pos_x <= -7)
+        Vector3 targetCamPos = transform.position;
 
+        if (Mathf.Abs(pos_x) > thresholdX)
         {
-            //
+            targetCamPos.x = ship_pos.x - thresholdX * Mathf.Sign(pos_x);
         }
+
+        if (Mathf.Abs(pos_y) > thresholdY)
+        {
+            targetCamPos.y = ship_pos.y - thresholdY * Mathf.Sign(pos_y);
+        }
+
+        targetCamPos.z = transform.position.z;
+        transform.position = Vector3.Lerp(transform.position, targetCamPos, 0.1f);
     }
     // Start is called before the first frame update
     void Start()
@@ -31,5 +42,9 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         
+    }
+    void LateUpdate()
+    {
+        Camera_move();
     }
 }
