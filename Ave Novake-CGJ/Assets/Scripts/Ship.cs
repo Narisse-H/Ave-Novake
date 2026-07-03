@@ -8,7 +8,8 @@ public class Ship : MonoBehaviour
     public Rigidbody2D rg;
     public Collider2D coll;
     public DistanceJoint2D dj;
-    public GameObject anchor;
+    public GameObject pre_anchor;
+    public List<GameObject> anchors;
     public int max_deployed_anchors;
     private int deployed_anchors;
 
@@ -18,7 +19,8 @@ public class Ship : MonoBehaviour
         if (deployed_anchors < max_deployed_anchors)
         {
             Vector3 mouse_pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Instantiate(anchor, mouse_pos, Quaternion.identity);
+            GameObject new_anchor = Instantiate(pre_anchor, mouse_pos, Quaternion.identity);
+            anchors.Add(new_anchor);
             deployed_anchors += 1;
         }
     }
