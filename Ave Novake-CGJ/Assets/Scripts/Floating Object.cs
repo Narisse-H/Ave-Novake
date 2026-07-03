@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeatherController : MonoBehaviour
+public class FloatingObject : MonoBehaviour
 {
     //
-    public int wind_level;
-
-    //Functions
-    public void Weather_Controller()
+    public float max_speed;
+    // Start is called before the first frame update
+    public void Apply_wind_force()
     {
         //
     }
-    // Start is called before the first frame update
     void Start()
     {
         
