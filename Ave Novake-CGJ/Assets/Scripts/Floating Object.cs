@@ -8,6 +8,7 @@ public class FloatingObject : MonoBehaviour
     public Rigidbody2D rg;
     public Collider2D coll;
     public float max_speed;
+    public int class_of_object;
     // Start is called before the first frame update
     public void Apply_wind_force()
     {
