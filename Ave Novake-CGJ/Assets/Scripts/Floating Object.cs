@@ -11,7 +11,7 @@ public class FloatingObject : MonoBehaviour
     // Start is called before the first frame update
     public void Apply_wind_force()
     {
-        //
+        //Vector2 to_anchor = 
     }
     void Start()
     {

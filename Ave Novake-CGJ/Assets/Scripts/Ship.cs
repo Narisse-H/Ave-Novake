@@ -8,6 +8,21 @@ public class Ship : MonoBehaviour
     public Rigidbody2D rg;
     public Collider2D coll;
     public DistanceJoint2D dj;
+    public GameObject anchor;
+    public int max_deployed_anchors;
+    private int deployed_anchors;
+
+    //Functions
+    void Set_anchor()//When key "F" is pressed
+    {
+        if (deployed_anchors < max_deployed_anchors)
+        {
+            Vector3 mouse_pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Instantiate(anchor, mouse_pos, Quaternion.identity);
+            deployed_anchors += 1;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +30,7 @@ public class Ship : MonoBehaviour
         rg = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
         dj = GetComponent<DistanceJoint2D>();
+        deployed_anchors = 0;
     }
 
     // Update is called once per frame
