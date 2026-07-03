@@ -11,6 +11,7 @@ public class CameraController : MonoBehaviour
     public float thresholdY = 5.0f;
     private float pos_x;
     private float pos_y;
+    float smoothSpeed = 3f; // 可调节
 
     void Camera_move()//Working in progress...
     {
@@ -30,7 +31,8 @@ public class CameraController : MonoBehaviour
         }
 
         targetCamPos.z = transform.position.z;
-        transform.position = Vector3.Lerp(transform.position, targetCamPos, 0.1f);
+        transform.position = Vector3.Lerp(transform.position, targetCamPos, 1 - Mathf.Exp(-smoothSpeed * Time.deltaTime));
+        
     }
     // Start is called before the first frame update
     void Start()
