@@ -5,12 +5,10 @@ using UnityEngine;
 public class Anchor : MonoBehaviour
 {
     public GameObject player;
-    public int player_deployed_anchors;
 
-
-    void OnMouseDown()//When the anchor is pointed
+    void OnMouseDown()//No need to call in Update; Unity calls it automatically.
     {
-        player_deployed_anchors -= 1;
+        player.GetComponent<Ship>().deployed_anchors -= 1;
         Destroy(gameObject);
     }
 
@@ -18,7 +16,6 @@ public class Anchor : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        player_deployed_anchors = player.GetComponent<Ship>().max_deployed_anchors;
     }
 
     // Update is called once per frame

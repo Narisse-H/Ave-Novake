@@ -9,19 +9,20 @@ public class Ship : MonoBehaviour
     public Collider2D coll;
     public DistanceJoint2D dj;
     public GameObject pre_anchor;
-    public List<GameObject> anchors;
     public int max_deployed_anchors;
     public int deployed_anchors;
 
     //Functions
     void Set_anchor()//When key "F" is pressed
     {
-        if (deployed_anchors < max_deployed_anchors)
+        if (Input.GetKeyDown(KeyCode.F))
         {
-            Vector3 mouse_pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            GameObject new_anchor = Instantiate(pre_anchor, mouse_pos, Quaternion.identity);
-            anchors.Add(new_anchor);
-            deployed_anchors += 1;
+            if (deployed_anchors < max_deployed_anchors)
+            {
+                Vector2 mouse_pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Instantiate(pre_anchor, mouse_pos, Quaternion.identity);
+                deployed_anchors += 1;
+            }
         }
     }
 
@@ -38,6 +39,6 @@ public class Ship : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Set_anchor();
     }
 }
