@@ -6,7 +6,6 @@ public class WeatherController : MonoBehaviour
 {
     //
     public int wind_level;
-
     //Functions
     public void Weather_Controller()
     {
