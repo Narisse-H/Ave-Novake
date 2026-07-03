@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class NewWindManager : MonoBehaviour
@@ -17,6 +18,8 @@ public class NewWindManager : MonoBehaviour
     private float directionTimer;
     private float speedTimer;
 
+    public List<GameObject> floating_objects;
+
     void UpdateDirection()
     {
         directionTimer += Time.deltaTime;
@@ -32,11 +35,10 @@ public class NewWindManager : MonoBehaviour
             targetDirection += sign * randomAngle;
 
             targetDirection = Mathf.Repeat(targetDirection, 360f);
-
-            //Debug.Log("�µ�Ŀ�����" + targetDirection);
         }
 
-        currentDirection = Mathf.MoveTowardsAngle(
+        currentDirection = Mathf.MoveTowardsAngle
+        (
             currentDirection,
             targetDirection,
             directionRotateSpeed * Time.deltaTime
@@ -56,7 +58,8 @@ public class NewWindManager : MonoBehaviour
             targetSpeed = Mathf.Clamp(targetSpeed, 2f, 8f);
         }
 
-        currentSpeed = Mathf.MoveTowards(
+        currentSpeed = Mathf.MoveTowards
+        (
             currentSpeed,
             targetSpeed,
             speedChangeSpeed * Time.deltaTime
@@ -80,7 +83,7 @@ public class NewWindManager : MonoBehaviour
 
     void Start()
     {
-        
+        floating_objects = GameObject.FindGameObjectsWithTag("Player").ToList();
     }
     void Update()
     {
