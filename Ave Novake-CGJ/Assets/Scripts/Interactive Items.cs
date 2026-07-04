@@ -10,12 +10,18 @@ public class InteractiveItems : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)//Working in progress...
     {
-        Destroy(gameObject);
+        if (other.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
     }
 
     void Distance_limit()
     {
-        
+        if (Vector2.Distance(player.transform.position, transform.position) >= 25.0f)
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Start is called before the first frame update
@@ -28,6 +34,6 @@ public class InteractiveItems : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Distance_limit();
     }
 }
