@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class WeatherController : MonoBehaviour
 {
-    //
     public float wind_level;
     public float wind_angle;
     private float d_wind_level;
@@ -37,7 +36,7 @@ public class WeatherController : MonoBehaviour
     void Start()
     {
         wind_angle = Random.Range(0.0f, 360.0f);
-        wind_level = Random.Range(0.0f, 1.0f);
+        wind_level = Random.Range(0.0f, 1.5f);
         StartCoroutine(Weather_Controller());
     }
 
