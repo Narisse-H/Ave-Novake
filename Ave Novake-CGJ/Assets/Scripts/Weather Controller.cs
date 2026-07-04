@@ -11,6 +11,7 @@ public class WeatherController : MonoBehaviour
     private float d_wind_angle;
     public float angle_random_range;
     public float level_random_range;
+    public float max_wind_level;
     public float time_interval;
 
     //Functions
@@ -20,8 +21,15 @@ public class WeatherController : MonoBehaviour
         {
             d_wind_angle = Random.Range(-angle_random_range, angle_random_range);
             d_wind_level = Random.Range(-level_random_range, level_random_range);
-            wind_angle += d_wind_angle;
-            wind_level += d_wind_level;
+            if (Mathf.Abs(wind_level + d_wind_level) <= max_wind_level)
+            {
+                wind_angle += d_wind_angle;
+                wind_level += d_wind_level;
+            }
+            else
+            {
+                wind_angle += d_wind_angle;
+            }
             yield return new WaitForSeconds(time_interval);
         }
     }

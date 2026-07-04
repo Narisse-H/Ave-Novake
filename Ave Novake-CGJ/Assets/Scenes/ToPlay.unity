@@ -274,6 +274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 0}
   ship_pos: {x: 0, y: 0}
+  cmr: {fileID: 0}
   thresholdX: 5
   thresholdY: 3
 --- !u!1 &711875388
@@ -683,6 +684,7 @@ MonoBehaviour:
   wind_angle: 0
   angle_random_range: 60
   level_random_range: 3
+  max_wind_level: 12
   time_interval: 1.5
 --- !u!4 &1463118943
 Transform:
