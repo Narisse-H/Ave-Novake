@@ -17,8 +17,8 @@ public class CameraController : MonoBehaviour
     void Camera_move()//Working in progress...
     {
         ship_pos = character.transform.position;
-        pos_x = (ship_pos.x - transform.position.x);
-        pos_y = (ship_pos.y - transform.position.y);
+        pos_x = ship_pos.x-transform.position.x;
+        pos_y = ship_pos.y-transform.position.y;
         Vector3 targetCamPos = transform.position;
 
         if (Mathf.Abs(pos_x) > thresholdX)
