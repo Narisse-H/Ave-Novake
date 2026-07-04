@@ -29,6 +29,7 @@ public class WeatherController : MonoBehaviour
             {
                 wind_angle += d_wind_angle;
             }
+            wind_angle = Mathf.Repeat(wind_angle, 360.0f);
             yield return new WaitForSeconds(time_interval);
         }
     }

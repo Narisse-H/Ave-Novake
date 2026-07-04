@@ -16,7 +16,7 @@ public class Zeus : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(5.0f);
+            yield return new WaitForSeconds(2.0f);
             yield return new WaitUntil(() => active_items < max_active_items);
 
             d_distance = Random.Range(15.0f, 20.0f);
