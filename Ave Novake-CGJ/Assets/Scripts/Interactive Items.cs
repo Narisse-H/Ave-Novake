@@ -19,7 +19,7 @@ public class InteractiveItems : MonoBehaviour
 
     void Distance_limit()
     {
-        if (Vector2.Distance(player.transform.position, transform.position) >= 25.0f)
+        if (Vector2.Distance(player.transform.position, transform.position) >= 40.0f)
         {
             zs.GetComponent<Zeus>().active_items -= 1;
             Destroy(gameObject);

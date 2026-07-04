@@ -31,12 +31,12 @@ public class CameraController : MonoBehaviour
             targetCamPos.y = ship_pos.y - thresholdY * Mathf.Sign(pos_y);
         }
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) && cmr.orthographicSize < 10.0f)
         {
             cmr.orthographicSize += 0.05f;
         }
 
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S) && cmr.orthographicSize > 0.5f)
         {
             cmr.orthographicSize -= 0.05f;
         }
