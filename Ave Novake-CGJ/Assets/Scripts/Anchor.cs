@@ -12,6 +12,15 @@ public class Anchor : MonoBehaviour
         Destroy(gameObject);
     }
 
+    void Recycle()
+    {
+        if (Vector2.Distance(player.transform.position, transform.position) > 3.0f)
+        {
+            player.GetComponent<Ship>().deployed_anchors -= 1;
+            Destroy(gameObject);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +30,6 @@ public class Anchor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Recycle();
     }
 }
