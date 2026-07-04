@@ -18,8 +18,8 @@ public class WeatherController : MonoBehaviour
     {
         while (true)
         {
-            d_wind_angle = Random.Range(0.0f, angle_random_range);
-            d_wind_level = Random.Range(0.0f, level_random_range);
+            d_wind_angle = Random.Range(-angle_random_range, angle_random_range);
+            d_wind_level = Random.Range(-level_random_range, level_random_range);
             wind_angle += d_wind_angle;
             wind_level += d_wind_level;
             yield return new WaitForSeconds(time_interval);
