@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class Ship : MonoBehaviour
 {
-    public float max_speed;
     public Rigidbody2D rb;
     public Collider2D coll;
     public DistanceJoint2D dj;
     public GameObject zs;
     public GameObject pre_anchor;
-    public Vector2 anchor_pos;
+    public Vector3 anchor_pos;
     public int max_deployed_anchors;
     public int deployed_anchors;
+    public float max_speed;
 
     //Functions
     void Set_anchor()//When key "F" is pressed
@@ -22,6 +22,7 @@ public class Ship : MonoBehaviour
             if (deployed_anchors < max_deployed_anchors)
             {
                 anchor_pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                anchor_pos.z = -1.0f;
                 if (Vector2.Distance(transform.position, anchor_pos) <= 2.0f)
                 {
                     Instantiate(pre_anchor, anchor_pos, Quaternion.identity);
@@ -38,6 +39,11 @@ public class Ship : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.H) && !dj.enabled)
             {
                 dj.enabled = true;
+                if (dj.autoConfigureDistance)
+                {
+                    dj.autoConfigureDistance = false;
+                }
+                dj.distance = Vector2.Distance(anchor_pos, transform.position)/2;
                 dj.anchor = anchor_pos;
             }
             else if (Input.GetKeyDown(KeyCode.H))
@@ -48,6 +54,27 @@ public class Ship : MonoBehaviour
         else
         {
             dj.enabled = false;
+        }
+    }
+
+    void Change_distance()
+    {
+        if (Input.GetKey(KeyCode.E))
+        {
+            if (dj.autoConfigureDistance)
+            {
+                dj.autoConfigureDistance = false;
+            }
+            dj.distance -= 0.001f;
+        }
+
+        if (Input.GetKey(KeyCode.Q))
+        {
+            if (dj.autoConfigureDistance)
+            {
+                dj.autoConfigureDistance = false;
+            }
+            dj.distance += 0.001f;
         }
     }
 
@@ -80,5 +107,6 @@ public class Ship : MonoBehaviour
     {
         Set_anchor();
         Enable_anchor_drag();
+        Change_distance();
     }
 }
