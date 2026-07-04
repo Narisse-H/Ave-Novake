@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class Ship : MonoBehaviour
 {
     public Rigidbody2D rb;
     public Collider2D coll;
-    public DistanceJoint2D dj;
+    //public DistanceJoint2D dj;
+    public float anchor_force_multip = 5.0f;
+    public float anchor_distance;
+    private bool anchor_active = false;
     public GameObject zs;
     public GameObject pre_anchor;
     public Vector3 anchor_pos;
@@ -36,45 +40,40 @@ public class Ship : MonoBehaviour
     {
         if (deployed_anchors > 0)
         {
-            if (Input.GetKeyDown(KeyCode.H) && !dj.enabled)
+            if (Input.GetKeyDown(KeyCode.H) && !anchor_active)
             {
-                dj.enabled = true;
-                if (dj.autoConfigureDistance)
-                {
-                    dj.autoConfigureDistance = false;
-                }
-                dj.distance = Vector2.Distance(anchor_pos, transform.position)/2;
-                dj.anchor = anchor_pos;
+                anchor_active = true;
+                anchor_distance = Vector2.Distance(transform.position, anchor_pos);
             }
             else if (Input.GetKeyDown(KeyCode.H))
             {
-                dj.enabled = false;
+                anchor_active = false;
             }
         }
         else
         {
-            dj.enabled = false;
+            anchor_active = false;
+        }
+    }
+
+    void Apply_force()
+    {
+        if (Vector2.Distance(transform.position, anchor_pos) >= anchor_distance && anchor_active)
+        {
+            rb.AddForce((Vector2)(anchor_pos - transform.position)*anchor_force_multip);
         }
     }
 
     void Change_distance()
     {
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKey(KeyCode.E) && anchor_distance >= 0.1)
         {
-            if (dj.autoConfigureDistance)
-            {
-                dj.autoConfigureDistance = false;
-            }
-            dj.distance -= 0.001f;
+            anchor_distance -= 0.001f;
         }
 
         if (Input.GetKey(KeyCode.Q))
         {
-            if (dj.autoConfigureDistance)
-            {
-                dj.autoConfigureDistance = false;
-            }
-            dj.distance += 0.001f;
+            anchor_distance += 0.001f;
         }
     }
 
@@ -97,7 +96,6 @@ public class Ship : MonoBehaviour
         //Init
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
-        dj = GetComponent<DistanceJoint2D>();
         zs = GameObject.FindGameObjectWithTag("GameController");
         deployed_anchors = 0;
     }
@@ -108,5 +106,10 @@ public class Ship : MonoBehaviour
         Set_anchor();
         Enable_anchor_drag();
         Change_distance();
+    }
+
+    void FixedUpdate()
+    {
+        Apply_force();
     }
 }

@@ -37,7 +37,7 @@ public class WeatherController : MonoBehaviour
     void Start()
     {
         wind_angle = Random.Range(0.0f, 360.0f);
-        wind_level = Random.Range(0.0f, 1.5f);
+        wind_level = Random.Range(0.0f, 1.0f);
         StartCoroutine(Weather_Controller());
     }
 
