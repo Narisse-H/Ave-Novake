@@ -12,6 +12,7 @@ public class InteractiveItems : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            zs.GetComponent<Zeus>().active_items -= 1;
             Destroy(gameObject);
         }
     }
@@ -20,6 +21,7 @@ public class InteractiveItems : MonoBehaviour
     {
         if (Vector2.Distance(player.transform.position, transform.position) >= 25.0f)
         {
+            zs.GetComponent<Zeus>().active_items -= 1;
             Destroy(gameObject);
         }
     }
