@@ -33,6 +33,16 @@ public class WeatherController : MonoBehaviour
         }
     }
 
+    public Vector2 GetWindDirection()
+    {
+        float rad = wind_angle * Mathf.Deg2Rad;
+
+        return new Vector2(
+            Mathf.Cos(rad),
+            Mathf.Sin(rad)
+        ).normalized;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
