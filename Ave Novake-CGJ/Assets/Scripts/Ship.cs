@@ -27,7 +27,7 @@ public class Ship : MonoBehaviour
             {
                 anchor_pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 anchor_pos.z = -1.0f;
-                if (Vector2.Distance(transform.position, anchor_pos) <= 2.0f)
+                if (Vector2.Distance(transform.position, anchor_pos) <= 3.0f)
                 {
                     Instantiate(pre_anchor, anchor_pos, Quaternion.identity);
                     deployed_anchors += 1;

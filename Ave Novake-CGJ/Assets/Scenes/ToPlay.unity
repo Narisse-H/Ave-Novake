@@ -419,7 +419,7 @@ MonoBehaviour:
   anchor_pos: {x: 0, y: 0, z: 0}
   max_deployed_anchors: 1
   deployed_anchors: 0
-  max_speed: 5
+  max_speed: 7
 --- !u!61 &861273094
 BoxCollider2D:
   m_ObjectHideFlags: 0
