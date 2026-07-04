@@ -8,6 +8,7 @@ public class Ship : MonoBehaviour
     public Rigidbody2D rg;
     public Collider2D coll;
     public DistanceJoint2D dj;
+    public GameObject zs;
     public GameObject pre_anchor;
     public Vector2 anchor_pos;
     public int max_deployed_anchors;
@@ -54,6 +55,7 @@ public class Ship : MonoBehaviour
         rg = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
         dj = GetComponent<DistanceJoint2D>();
+        zs = GameObject.FindGameObjectWithTag("GameController");
         deployed_anchors = 0;
     }
 
