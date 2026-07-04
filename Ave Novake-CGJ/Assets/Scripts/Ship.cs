@@ -79,7 +79,7 @@ public class Ship : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)//Working in progress...
     {
-        int object_class = other.GetComponent<FloatingObject>().class_of_object;
+        int object_class = other.GetComponent<InteractiveItems>().class_of_object;
         if (object_class == 0)//Game Over
         {
             //
