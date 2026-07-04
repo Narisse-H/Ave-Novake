@@ -14,10 +14,7 @@ public class FloatingObject : MonoBehaviour
     public float angle_rad;
     public float wind_level;
     public float max_speed;
-<<<<<<< HEAD
     public int class_of_object;
-=======
->>>>>>> Backup
 
     // Start is called before the first frame update
     public void Apply_wind_force()
