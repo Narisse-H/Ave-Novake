@@ -7,8 +7,8 @@ public class CameraController : MonoBehaviour
 {
     public GameObject character;
     public Vector2 ship_pos;
-    public float thresholdX = 7.0f;
-    public float thresholdY = 5.0f;
+    public float thresholdX = 5.0f;
+    public float thresholdY = 3.0f;
     private float pos_x;
     private float pos_y;
     float smoothSpeed = 3f;

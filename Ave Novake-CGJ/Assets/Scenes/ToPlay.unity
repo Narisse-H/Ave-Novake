@@ -253,13 +253,15 @@ GameObject:
   m_Component:
   - component: {fileID: 797255497}
   - component: {fileID: 797255496}
+  - component: {fileID: 797255499}
+  - component: {fileID: 797255498}
   m_Layer: 0
   m_Name: Wooden Box
   m_TagString: Floating
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &797255496
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -327,6 +329,84 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &797255498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797255495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de10cffc6ff07cf4db62fa65dd2a522b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  coll: {fileID: 0}
+  zs: {fileID: 0}
+  GO_wind_controller: {fileID: 1464295817}
+  wind_controller: {fileID: 0}
+  angle_rad: 0
+  wind_level: 0
+  max_speed: 5
+--- !u!50 &797255499
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797255495}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 3
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!1 &839854810
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 839854811}
+  m_Layer: 0
+  m_Name: Zeus
+  m_TagString: GameController
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &839854811
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839854810}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1443706382
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,8 +418,13 @@ GameObject:
   - component: {fileID: 1443706385}
   - component: {fileID: 1443706384}
   - component: {fileID: 1443706383}
+<<<<<<< HEAD
   - component: {fileID: 1443706387}
   - component: {fileID: 1443706386}
+=======
+  - component: {fileID: 1443706386}
+  - component: {fileID: 1443706387}
+>>>>>>> Backup
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -430,6 +515,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1443706382}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD
   m_Script: {fileID: 11500000, guid: 3d31b8141de917644b3d6ea0dbbc18a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -446,6 +532,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1443706382}
   m_Enabled: 1
   m_EditorHideFlags: 0
+=======
+>>>>>>> Backup
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -481,6 +569,74 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+<<<<<<< HEAD
+=======
+--- !u!114 &1443706387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443706382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d31b8141de917644b3d6ea0dbbc18a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 0}
+  ship_pos: {x: 0, y: 0}
+  thresholdX: 7
+  thresholdY: 5
+--- !u!1 &1464295817
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1464295819}
+  - component: {fileID: 1464295818}
+  m_Layer: 0
+  m_Name: Weather Controller
+  m_TagString: WeatherController
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1464295818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464295817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9711ccf41b3cafa44a6cdb4117d3821a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wind_level: 0
+  wind_angle: 0
+  angle_random_range: 30
+  level_random_range: 3
+  time_interval: 2
+--- !u!4 &1464295819
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1464295817}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> Backup
 --- !u!1 &1501069743
 GameObject:
   m_ObjectHideFlags: 0
@@ -733,6 +889,7 @@ GameObject:
   - component: {fileID: 1501382499}
   - component: {fileID: 1501382498}
   - component: {fileID: 1501382497}
+  - component: {fileID: 1501382503}
   m_Layer: 0
   m_Name: Ship back
   m_TagString: Player
@@ -753,13 +910,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   max_speed: 0
-  rg: {fileID: 0}
+  rb: {fileID: 0}
   coll: {fileID: 0}
   dj: {fileID: 0}
   zs: {fileID: 0}
+<<<<<<< HEAD
   pre_anchor: {fileID: 0}
+=======
+  pre_anchor: {fileID: 76392469134275656, guid: 6df1bb6862aba5a40b7eb84f51d529ba, type: 3}
+>>>>>>> Backup
   anchor_pos: {x: 0, y: 0}
-  max_deployed_anchors: 0
+  max_deployed_anchors: 1
   deployed_anchors: 0
 --- !u!70 &1501382498
 CapsuleCollider2D:
@@ -813,9 +974,9 @@ DistanceJoint2D:
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
-  m_AutoConfigureDistance: 1
-  m_Distance: 0.401071
-  m_MaxDistanceOnly: 0
+  m_AutoConfigureDistance: 0
+  m_Distance: 0.5
+  m_MaxDistanceOnly: 1
 --- !u!50 &1501382500
 Rigidbody2D:
   serializedVersion: 4
@@ -828,10 +989,10 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 20
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -904,12 +1065,36 @@ Transform:
   m_GameObject: {fileID: 1501382496}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: 0.11780143, y: -0.3833807, z: -1}
+=======
+  m_LocalPosition: {x: 0, y: 0, z: -1}
+>>>>>>> Backup
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1501382503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501382496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de10cffc6ff07cf4db62fa65dd2a522b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  coll: {fileID: 0}
+  zs: {fileID: 0}
+  GO_wind_controller: {fileID: 1464295817}
+  wind_controller: {fileID: 0}
+  angle_rad: 0
+  wind_level: 0
+  max_speed: 5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -918,5 +1103,10 @@ SceneRoots:
   - {fileID: 1501382502}
   - {fileID: 490475090}
   - {fileID: 797255497}
+<<<<<<< HEAD
   - {fileID: 220313715}
   - {fileID: 149754377}
+=======
+  - {fileID: 839854811}
+  - {fileID: 1464295819}
+>>>>>>> Backup

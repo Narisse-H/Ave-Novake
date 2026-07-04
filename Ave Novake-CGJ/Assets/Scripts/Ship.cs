@@ -5,7 +5,7 @@ using UnityEngine;
 public class Ship : MonoBehaviour
 {
     public float max_speed;
-    public Rigidbody2D rg;
+    public Rigidbody2D rb;
     public Collider2D coll;
     public DistanceJoint2D dj;
     public GameObject zs;
@@ -22,8 +22,11 @@ public class Ship : MonoBehaviour
             if (deployed_anchors < max_deployed_anchors)
             {
                 anchor_pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                Instantiate(pre_anchor, anchor_pos, Quaternion.identity);
-                deployed_anchors += 1;
+                if (Vector2.Distance(transform.position, anchor_pos) <= 2.0f)
+                {
+                    Instantiate(pre_anchor, anchor_pos, Quaternion.identity);
+                    deployed_anchors += 1;
+                }
             }
         }
     }
@@ -65,7 +68,7 @@ public class Ship : MonoBehaviour
     void Start()
     {
         //Init
-        rg = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
         dj = GetComponent<DistanceJoint2D>();
         zs = GameObject.FindGameObjectWithTag("GameController");
