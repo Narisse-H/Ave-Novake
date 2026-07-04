@@ -9,7 +9,6 @@ public class FloatingObject : MonoBehaviour
     public Rigidbody2D rb;
     public Collider2D coll;
     public GameObject zs;
-    public GameObject GO_wind_controller;
     public WeatherController wind_controller;
     public float angle_rad;
     public float wind_level;
@@ -29,7 +28,7 @@ public class FloatingObject : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
         zs = GameObject.FindGameObjectWithTag("GameController");
-        wind_controller = GO_wind_controller.GetComponent<WeatherController>();
+        wind_controller = GameObject.FindGameObjectWithTag("WeatherController").GetComponent<WeatherController>();
     }
 
     // Update is called once per frame
