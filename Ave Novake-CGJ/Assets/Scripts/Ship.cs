@@ -22,11 +22,8 @@ public class Ship : MonoBehaviour
             if (deployed_anchors < max_deployed_anchors)
             {
                 anchor_pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                if (Vector2.Distance(transform.position, anchor_pos) <= 2.0f)
-                {
-                    Instantiate(pre_anchor, anchor_pos, Quaternion.identity);
-                    deployed_anchors += 1;
-                }
+                Instantiate(pre_anchor, anchor_pos, Quaternion.identity);
+                deployed_anchors += 1;
             }
         }
     }
