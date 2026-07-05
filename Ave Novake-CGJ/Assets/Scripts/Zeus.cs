@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Zeus : MonoBehaviour
 {
     public GameObject player;
     public GameObject pre_wooden_barrel;
+    public TextMeshProUGUI scoreboard;
     public Vector3 spawn_pos;
     private float d_distance;
     public int score = 0;
@@ -40,6 +42,11 @@ public class Zeus : MonoBehaviour
         }
     }
 
+    void Update_scoreboard()
+    {
+        scoreboard.text = "得分:" + score;
+    }
+
     void Back_main_interface()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -52,6 +59,7 @@ public class Zeus : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        scoreboard = GameObject.FindGameObjectWithTag("Scoreboard").GetComponent<TextMeshProUGUI>();
         active_items = 0;
         StartCoroutine(Items_Controller());
     }
@@ -60,5 +68,6 @@ public class Zeus : MonoBehaviour
     void Update()
     {
         Back_main_interface();
+        Update_scoreboard();
     }
 }
