@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Zeus : MonoBehaviour
 {
@@ -39,6 +40,14 @@ public class Zeus : MonoBehaviour
         }
     }
 
+    void Back_main_interface()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("Main Interface");
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +59,6 @@ public class Zeus : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Back_main_interface();
     }
 }

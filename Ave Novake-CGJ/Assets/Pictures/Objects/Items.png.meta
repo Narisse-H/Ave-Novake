@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 128
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,8 +113,8 @@ TextureImporter:
       name: Items_0
       rect:
         serializedVersion: 2
-        x: 12
-        y: 786
+        x: 2
+        y: 795
         width: 132
         height: 56
       alignment: 0
@@ -134,12 +134,12 @@ TextureImporter:
       name: Start
       rect:
         serializedVersion: 2
-        x: 12
-        y: 722
+        x: 2
+        y: 730
         width: 132
         height: 56
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -147,6 +147,90 @@ TextureImporter:
       bones: []
       spriteID: f79b8e85a85c97546af8615eea44a527
       internalID: 1194268681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Items_1
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 943
+        width: 376
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 038bb15148fc93f438152102c6de921b
+      internalID: 646315351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Quit
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 730
+        width: 132
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2b842b7d128cd74ebeddb123c0f6bb3
+      internalID: 1073223146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Box
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 246
+        width: 120
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a344f2ff3f2a3fd479894f775a9c3ace
+      internalID: 1097956855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Easter Egg
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 426
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af2b066c3f48fc14881f9d412ba31837
+      internalID: 1644743091
       vertices: []
       indices: 
       edges: []
@@ -162,7 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Box: 1097956855
+      Easter Egg: 1644743091
       Items_0: -15823512
+      Items_1: 646315351
+      Items_2: -461162115
+      Quit: 1073223146
       Start: 1194268681
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
